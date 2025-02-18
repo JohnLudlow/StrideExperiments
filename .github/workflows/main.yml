@@ -19,6 +19,7 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Restore dependencies
+      working-directory: ./FourXGame
       run: dotnet restore
 
     - name: Build 4xGame
