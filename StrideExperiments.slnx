@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/OcclusionTest/">
+    <Project Path="OcclusionTest/StrideExperiments.OcclusionTest.TestHarnessGame/StrideExperiments.OcclusionTest.TestHarnessGame.csproj" />
+    <Project Path="OcclusionTest/StrideExperiments.OcclusionTest.Core/StrideExperiments.OcclusionTest.Core.csproj" />
+    <Project Path="OcclusionTest/StrideExperiments.OcclusionTest.UnitTests/StrideExperiments.OcclusionTest.UnitTests.csproj" />
+  </Folder>
+</Solution>
