@@ -1,7 +1,8 @@
 ﻿using Stride.Engine;
-using Stride.CommunityToolkit.Bepu;
-using Stride.CommunityToolkit.Rendering.ProceduralModels;
-using Stride.CommunityToolkit.Engine;
+using Stride.Core.Mathematics;
+using Stride.Rendering;
+using Stride.Graphics.GeometricPrimitives;
+using Stride.Extensions;
 
 namespace StrideExperiments.OcclusionTest.UnitTests;
 
@@ -10,14 +11,22 @@ public class ObjectInView
     [Fact]
     public void IsNotOccluded()
     {        
-        RunGameTest(async (game, scene) => {
-            scene.Entities.Add(game.Create3DPrimitive(PrimitiveModelType.Cube));
+        RunGameTest(async (game, scene) =>
+        {
+            var entity = new Entity();
+            var model = new Model();
 
-            Assert.NotEmpty(scene.Entities);
+            model.Meshes.Add
+            (
+                new Mesh 
+                { 
+                    Draw = GeometricPrimitive.Cube.New(game.GraphicsDevice).ToMeshDraw() 
+                }
+            );
 
-            var mainCamera = scene.GetCamera();
-            
-            Assert.NotNull(mainCamera);
+            entity.GetOrCreate<ModelComponent>().Model = model;
+            entity.Transform.Position = new Vector3(1, 1, 1);
+            scene.Entities.Add(entity);
         });
     }
 
