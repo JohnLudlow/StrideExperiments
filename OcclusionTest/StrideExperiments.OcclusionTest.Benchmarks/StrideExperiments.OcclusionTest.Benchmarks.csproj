@@ -12,4 +12,7 @@
     <ProjectReference Include="../StrideExperiments.OcclusionTest.Core/StrideExperiments.OcclusionTest.Core.csproj" />
   </ItemGroup>
 
+  <Target Name="RunBenchMark">
+    <Exec Command="$(OutputPath)"/>
+  </Target>
 </Project>
