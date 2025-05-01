@@ -28,4 +28,5 @@ jobs:
       run: dotnet test --no-build --verbosity normal
 
     - name: Benchmark OcclusionTest
+      working-directory: .
       run: dotnet run --project ./OcclusionTest/StrideExperiments.OcclusionTest.Benchmarks/StrideExperiments.OcclusionTest.Benchmarks.csproj --configuration Release --no-build
